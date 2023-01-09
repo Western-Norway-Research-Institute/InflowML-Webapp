@@ -31,9 +31,9 @@ app.layout = html.Div(
             [
                 html.Div(
                     [
-                        html.H4("WIND SPEED STREAMING", className="app__header__title"),
+                        html.H4("Tilsig", className="app__header__title"),
                         html.P(
-                            "This app continually queries a SQL database and displays live charts of wind speed and wind direction.",
+                            "Tilsig i eit eller anna kraftverk.",
                             className="app__header__title--grey",
                         ),
                     ],
@@ -48,7 +48,7 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.Div(
-                            [html.H6("WIND SPEED (MPH)", className="graph__title")]
+                            [html.H6("TILSIG (m3/s)", className="graph__title")]
                         ),
                         dcc.Graph(
                             id="wind-speed",
@@ -75,7 +75,7 @@ app.layout = html.Div(
                                 html.Div(
                                     [
                                         html.H6(
-                                            "WIND SPEED HISTOGRAM",
+                                            "HISTOGRAM",
                                             className="graph__title",
                                         )
                                     ]
