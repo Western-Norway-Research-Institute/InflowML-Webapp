@@ -38,27 +38,7 @@ app.layout = html.Div(
                         ),
                     ],
                     className="app__header__desc",
-                ),
-                html.Div(
-                    [
-                        html.A(
-                            html.Button("SOURCE CODE", className="link-button"),
-                            href="https://github.com/plotly/dash-sample-apps/tree/main/apps/dash-wind-streaming",
-                        ),
-                        html.A(
-                            html.Button("ENTERPRISE DEMO", className="link-button"),
-                            href="https://plotly.com/get-demo/",
-                        ),
-                        html.A(
-                            html.Img(
-                                src=app.get_asset_url("dash-new-logo.png"),
-                                className="app__menu__img",
-                            ),
-                            href="https://plotly.com/dash/",
-                        ),
-                    ],
-                    className="app__header__logo",
-                ),
+                )
             ],
             className="app__header",
         ),
