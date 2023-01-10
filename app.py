@@ -14,11 +14,18 @@ app_color = {"graph_bg": "#082255", "graph_line": "#007ACE"}
 df = pd.read_csv('tilsig_aaroy.csv', index_col=0)
 
 fig = px.line(df, y="tilsig")
+fighist = px.histogram(df, x='tilsig', histnorm='probability density')
 
 fig.update_layout(
     plot_bgcolor=app_color["graph_bg"],
     paper_bgcolor=app_color["graph_bg"],
-    font_color="white"
+    font_color="white",
+)
+
+fighist.update_layout(
+    plot_bgcolor=app_color["graph_bg"],
+    paper_bgcolor=app_color["graph_bg"],
+    font_color="white",
 )
 
 app.layout = html.Div(children=[
@@ -28,9 +35,24 @@ app.layout = html.Div(children=[
         Tilsig: Årøy kraftverk
     ''', style={'color': 'white'},),
 
-    dcc.Graph(
-        id='example-graph',
-        figure=fig
+    html.Div(
+        [
+            html.Div(
+                dcc.Graph(
+                    id='example-graph',
+                    figure=fig
+                ),  
+                className="two-thirds column inflow-lineplot",
+            ), 
+
+            html.Div(
+                dcc.Graph(
+                    id='histogram-graph',
+                    figure=fighist
+                ),
+                className="one-third column inflow-histogram",
+            )
+        ]
     )
 ])
 
